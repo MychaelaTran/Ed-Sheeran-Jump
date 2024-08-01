@@ -1,0 +1,295 @@
+body {
+    background-color: hsl(39, 100%, 70%);
+}
+
+#dessert {
+    position: absolute;
+    background-image: url(road.png);
+    top: 500px;
+    height: 250px;
+    width: 100%;
+    animation: scrollRoad 600s infinite linear;
+    display: none;
+}
+/*
+.hearts, .heartss, .heartsss {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;  Distribute space evenly around hearts 
+    align-items: flex-end;  Align hearts to the bottom 
+}
+
+.hearts {
+    animation: scrollHeart 5s infinite linear;
+}
+
+.heartss {
+    animation: scrollHeart 5s infinite linear;
+    animation-delay: 5s;
+}
+
+.heartsss {
+    animation: scrollHeart 5s infinite linear;
+    animation-delay: 7s;
+}
+
+.hearts img, .heartss img, .heartsss img {
+    transform: scale(0.2); /* Adjust scale as needed 
+}
+*/
+.character {
+    background-image: url("character.png");
+    height: 300px; /*size of image*/
+    width: 275px;
+    position: absolute; /*absolute relatie to its parent thre desesrt*/
+    top: -130px;
+    transform: scale(0.67);
+    display: none;
+}
+
+.obstacle{
+   background-image: url('obstacle.png'); 
+   width: 300px;
+   height: 520px;
+   transform: scale(0.2);
+   position: absolute;
+   top: -200px;
+}
+
+#startBut{
+    color: hsl(39, 100%, 64%);
+    background-color: hsl(0, 0%, 100%);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 7px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px 32px;
+    font-family: 'Press Start 2P', cursive;
+    animation: colourWave 3s infinite alternate;
+
+}
+#header {
+    
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 10px 2px 5px hsla(0, 0%, 0%, 0.493);
+    animation: colourWave 3s infinite alternate;
+   
+}
+#chooseEd{
+    color: hsl(39, 100%, 64%);
+    background-color: hsl(0, 0%, 100%);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 20Px;
+    margin: 20px;
+    font-family: 'Press Start 2P', cursive;
+    animation: colourWave 3s infinite alternate;
+
+}
+
+#startBut:hover{
+    font-size: 35px;
+}
+#chooseEd:hover{
+    font-size: 20px;
+}
+
+#startScreen{ /*this is to make the titel and button in middle*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+}
+#annie{
+    position:absolute; /*removes from flexbox in the div*/
+    height: 200px;
+    top: 100px; 
+    right: 50px; 
+    height: 200px;
+    animation: pulse 8s infinite;
+}
+
+#panda{
+    position:absolute; 
+    height: 200px;
+    top: 100px; 
+    left: 50px; 
+    height: 200px;
+    animation: pulseR 8s infinite;
+
+}
+
+#edHeart{
+    position:absolute; 
+    height: 200px;
+    top: 620px; 
+    left: 50px; 
+    height: 200px;
+    animation: pulseR 8s infinite;
+
+}
+
+#ginger{
+    position:absolute; 
+    height: 200px;
+    top: 620px; 
+    right: 50px; 
+    height: 200px;
+    animation: pulseR 8s infinite;
+
+}
+
+
+
+#home{
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Press Start 2P', cursive;
+    top: -270px;
+    font-size: 2em;
+    bordeR: none;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px 20px;
+    cursor: pointer;
+
+}
+
+#home:hover{
+    font-size: 3em;
+}
+
+#status{
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%); /*need this bc above moves it left 50% but then need to move back by 50% of its own width to center*/
+    align-self: center;
+    font-size: 3em;
+    
+}
+
+#selectEd{
+    display: none;
+}
+
+#home2{
+    display: none;
+
+}
+
+
+#eds{
+    display:flex;
+    justify-content: center; /*centers horizontall*/
+    align-items: center; /*centers vertically*/
+    margin: auto;
+    height: 100vh;
+    gap: 10px;
+    max-width: 100%;
+    transform: scale(2)
+  
+
+}
+#eds img {
+    max-width: 100px; /*max width for each image*/
+    height: auto; /*mantan ratio*/
+    
+}
+
+#home2{
+    position: absolute;
+    top: 70px;
+    left: 85%;
+    font-size: 1em;
+    bordeR: none;
+    border-radius: 5px;
+    background-color: hwb(0 100% 0%);
+    padding: 10px 10px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+#home2:hover{
+    font-size: 1.1em;
+    border: 2px solid black;
+}
+#selAnnie{
+    cursor: pointer;
+}
+#selAnnie:hover{
+    transform: scale(1.3);
+}
+
+#selPanda{
+    cursor: pointer;
+}
+#selPanda:hover{
+    transform: scale(1.3);
+}
+
+#selGinger{
+    cursor: pointer;
+    transform: scale(1.3)
+}
+#selGinger:hover{
+    transform: scale(1.6);
+}
+
+#selHeart{
+    cursor: pointer;
+}
+#selHeart:hover{
+    transform: scale(1.3);
+}
+
+@keyframes pulse{
+    0%{ height: 200px;
+        transform: rotate(0deg); }
+    50%{ height: 60px; }
+    100%{ height: 200px;
+        transform: rotate(360deg); }
+}
+
+@keyframes pulseR {
+    0%{ height: 200px;
+        transform: rotate(0deg); }
+    50%{ height: 60px; }
+    100%{ height: 200px;
+        transform: rotate(-360deg); }
+}
+
+@keyframes colourWave{
+    0% { color: #ce40f1; }
+    50% { color: #4acbe2; }
+    100% { color: #FF6347; }
+}
+
+@keyframes scrollRoad {
+    0% {
+        background-position: 25000%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+@keyframes scrollHeart {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
