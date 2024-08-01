@@ -1,5 +1,6 @@
 body {
     background-color: hsl(39, 100%, 70%);
+    overflow-x: hidden;
 }
 
 #dessert {
@@ -225,12 +226,7 @@ body {
     font-size: 1.1em;
     border: 2px solid black;
 }
-#selAnnie{
-    cursor: pointer;
-}
-#selAnnie:hover{
-    transform: scale(1.3);
-}
+
 
 #selPanda{
     cursor: pointer;
@@ -239,19 +235,145 @@ body {
     transform: scale(1.3);
 }
 
-#selGinger{
-    cursor: pointer;
-    transform: scale(1.3)
-}
+
 #selGinger:hover{
     transform: scale(1.6);
 }
 
-#selHeart{
+
+#selHeart:hover{
+    transform: scale(1);
+}
+
+#selected{
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+    position: relative;
+    
+}
+#selected {
+    position: absolute; /* Position relative to #selectEd */
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style each h3 tag */
+h3 {
+    display: inline-block; /* Takes only as much width as needed */
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+#pandaContainer{
+    position: relative;
+    display: inline-block;
+}
+
+#pandaBut{
+    display: none;
+    position: absolute;
+    padding: 5px 5px;
+    font-size: 5px;
+    left: 20px;
+    top: 169px;
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+    background-color: white;
+    border: 2px solid black;
     cursor: pointer;
 }
-#selHeart:hover{
+
+#gingerContainer{
+    position: relative;
+    display: inline-block;
+}
+
+#selGinger{
+    display: block;
+    max-width:200px;
+    height: auto;
+    cursor: pointer;
+    transform: scale(1.3)
+}
+
+#gingerBut{
+    display: block;
+    position: absolute;
+    padding: 5px 5px;
+    font-size: 5px;
+    left: 20px;
+    top: 137px;
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#heartContainer{
+    position: relative;
+    display: inline-block;
+}
+
+#selHeart{
+    display: block;
+    max-width:200px;
+    height: auto;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+#edHeartBut{
+    display: none;
+    position: absolute;
+    padding: 5px 5px;
+    font-size: 5px;
+    left: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#annieContainer{
+    position: relative;
+    display: inline-block;
+}
+#annieBut{
+    display: none;
+    position: absolute;
+    padding: 5px 5px;
+    font-size: 5px;
+    left: 20px;
+    top: 161px;
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#selAnnie{
+    display: block;
+    max-width:200px;
+    height: auto;
+    cursor: pointer;
+}
+#selAnnie:hover{
     transform: scale(1.3);
+}
+#titleEd{
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    font-size: 2.2em;
 }
 
 @keyframes pulse{

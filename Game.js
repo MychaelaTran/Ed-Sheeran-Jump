@@ -12,18 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let isJumping = false
     let isGameOver = false
     let obstacleInterval = 3000
+    let speed = 10
     
-    speed = 10
+   
 
-    startBut.addEventListener('click', function(){
+    function startButtonHandler(){
         startScreen.style.display = 'none'
         character.style.display = 'block'
         dessert.style.display = 'block'
         startGame()
+    }
+    startBut.addEventListener('click', startButtonHandler)
 
-    })
-
-    homeBut.addEventListener('click', function(){
+    function homeButtonHandler() {
         startScreen.style.display = 'flex'
         dessert.style.display = 'none'
         isGameOver = false
@@ -33,10 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
         obstacleInterval = 3000
         status.innerHTML = ''
         homeBut.style.display = 'none'
+    }
 
-  
-        
-    })
+    homeBut.addEventListener('click', homeButtonHandler)
 
     
 
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         //keep removing last child as long as first child exists 
                         //everything removed from grid so i have to add them all back!!
                         //bc when game first starts they are already there
-                    }*/
+                    } */
                 } 
                 obstaclePosition -= speed
                 obstacle.style.left = obstaclePosition + 'px'
