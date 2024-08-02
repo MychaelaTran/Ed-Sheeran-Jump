@@ -28,21 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Remove existing obstacles
         const obstacles = document.querySelectorAll('.obstacle')
-        obstacles.forEach(obstacle => grid.removeChild(obstacle))
+        obstacles.forEach(function(obstacle) {
+            grid.removeChild(obstacle);
+        });
+        
 
         startGame()
     }
 
     replayBut.addEventListener('click', replayButtonHandler)
 
-    
+    /*make so when dies, the next obstacle that spawns dissapears righrt away*/
 
     function startButtonHandler(){
         startScreen.style.display = 'none'
         character.style.display = 'block'
         dessert.style.display = 'block'
         const obstacles = document.querySelectorAll('.obstacle')
-        obstacles.forEach(obstacle => grid.removeChild(obstacle))
+        obstacles.forEach(function(obstacle) {
+            grid.removeChild(obstacle);
+        });
         startGame()
     }
     startBut.addEventListener('click', startButtonHandler)
