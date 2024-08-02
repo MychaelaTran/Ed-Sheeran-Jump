@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const startBut = document.getElementById('startBut')
     const startScreen = document.getElementById('startScreen')
     const homeBut = document.getElementById('home')
+    const replayBut = document.getElementById('replay')
     let position = -80
     let gravity = 0.9
     let isJumping = false
@@ -14,7 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
     let obstacleInterval = 3000
     let speed = 10
     
-   
+    function replayButtonHandler(){
+        isGameOver = false
+        position = -80
+        isJumping = false
+        speed = 10
+        obstacleInterval = 3000
+        status.innerHTML = ''
+        homeBut.style.display = 'none'
+        replay.style.display = 'none'
+        character.style.display = 'block'
+        obstacle.style.display = 'block'
+        startGame()
+    }
+
+    replayBut.addEventListener('click', replayButtonHandler)
+
+    
 
     function startButtonHandler(){
         startScreen.style.display = 'none'
@@ -34,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         obstacleInterval = 3000
         status.innerHTML = ''
         homeBut.style.display = 'none'
+        replay.style.display = 'none'
     }
 
     homeBut.addEventListener('click', homeButtonHandler)
