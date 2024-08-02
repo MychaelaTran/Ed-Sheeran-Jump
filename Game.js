@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                     clearInterval(timerId)
                     status.innerHTML = 'Game Over!'
+                    replay.style.display = 'block'
                     isGameOver = true;
                     homeBut.style.display = 'block'
                     character.style.display = 'none'
