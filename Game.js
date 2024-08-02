@@ -23,9 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         obstacleInterval = 3000
         status.innerHTML = ''
         homeBut.style.display = 'none'
-        replay.style.display = 'none'
+        replayBut.style.display = 'none'
         character.style.display = 'block'
-        obstacle.style.display = 'block'
+
+        // Remove existing obstacles
+        const obstacles = document.querySelectorAll('.obstacle')
+        obstacles.forEach(obstacle => grid.removeChild(obstacle))
+
         startGame()
     }
 
@@ -37,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
         startScreen.style.display = 'none'
         character.style.display = 'block'
         dessert.style.display = 'block'
+        const obstacles = document.querySelectorAll('.obstacle')
+        obstacles.forEach(obstacle => grid.removeChild(obstacle))
         startGame()
     }
     startBut.addEventListener('click', startButtonHandler)
@@ -52,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         status.innerHTML = ''
         homeBut.style.display = 'none'
         replay.style.display = 'none'
+        
     }
 
     homeBut.addEventListener('click', homeButtonHandler)
@@ -108,6 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const obstacle = document.createElement('div')
             obstacle.classList.add('obstacle')
             grid.append(obstacle)
+            if(obstacle.style.display === 'none' && isGameOver === false){
+                obstacle.style.display = 'block'
+            }
             obstacle.style.left= obstaclePosition + 'px'
 
             let timerId = setInterval(function(){ //animate it moving left
