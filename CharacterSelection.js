@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         fallHeight = -135
         jumpHeight = 55
 
+       
+
     }
 
     chooseEdBut.addEventListener('click', function(){

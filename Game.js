@@ -26,28 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
         replayBut.style.display = 'none'
         character.style.display = 'block'
 
-        // Remove existing obstacles
-        const obstacles = document.querySelectorAll('.obstacle')
-        obstacles.forEach(function(obstacle) {
-            grid.removeChild(obstacle);
-        });
-        
-
         startGame()
     }
 
     replayBut.addEventListener('click', replayButtonHandler)
 
-    /*make so when dies, the next obstacle that spawns dissapears righrt away*/
 
     function startButtonHandler(){
         startScreen.style.display = 'none'
         character.style.display = 'block'
         dessert.style.display = 'block'
-        const obstacles = document.querySelectorAll('.obstacle')
-        obstacles.forEach(function(obstacle) {
-            grid.removeChild(obstacle);
-        });
+
         startGame()
     }
     startBut.addEventListener('click', startButtonHandler)
@@ -139,7 +128,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     clearTimeout(hardMode1)
                     clearTimeout(hardMode2)
                     clearTimeout(hardMode3)
-/*
+                  
+
+                    /*removing obstacles*/
+                    const obstacles = document.querySelectorAll('.obstacle')
+                    obstacles.forEach(function(obstacle){
+                        grid.removeChild(obstacle)
+                    })
+                    /*
                     while(grid.firstChild){ //removing all children on grid
                         grid.removeChild(grid.lastChild)
                         //keep removing last child as long as first child exists 
